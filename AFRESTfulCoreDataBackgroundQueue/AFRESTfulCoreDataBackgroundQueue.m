@@ -27,7 +27,7 @@
 #import <objc/message.h>
 #import <objc/runtime.h>
 
-
+char *const AFRESTfulCoreDataBackgroundQueueDefaultTimeout;
 
 @implementation AFRESTfulCoreDataBackgroundQueue
 
@@ -59,10 +59,19 @@
     return nil;
 }
 
+- (void)setDefaultTimeout:(NSNumber *)defaultTimeout
+{
+    objc_setAssociatedObject(self, AFRESTfulCoreDataBackgroundQueueDefaultTimeout, defaultTimeout, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
 - (void)getRequestToURL:(NSURL *)URL
       completionHandler:(void(^)(id JSONObject, NSError *error))completionHandler
 {
     NSMutableURLRequest *request = [self requestWithMethod:@"GET" path:URL.absoluteString parameters:nil];
+    NSNumber *timeout = objc_getAssociatedObject(self, AFRESTfulCoreDataBackgroundQueueDefaultTimeout);
+    if (timeout){
+        [request setTimeoutInterval:timeout.doubleValue];
+    }
     
     AFHTTPRequestOperation *requestOperation = [self HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (completionHandler) {

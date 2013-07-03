@@ -5,7 +5,7 @@ Pod::Spec.new do |spec|
   spec.license       = 'MIT'
   spec.source        = { :git => 'https://github.com/OliverLetterer/AFRESTfulCoreDataBackgroundQueue.git', :tag => spec.version.to_s }
   spec.source_files  = 'AFRESTfulCoreDataBackgroundQueue'
-  spec.frameworks    = 'Foundation'
+  spec.frameworks    = 'MobileCoreServices', 'SystemConfiguration', 'Security', 'CoreGraphics', 'Foundation'
   spec.requires_arc  = true
   spec.homepage      = 'https://github.com/OliverLetterer/AFRESTfulCoreDataBackgroundQueue'
   spec.summary       = 'AFNetworking based AFHTTPClient conforming to SLRESTfulCoreDataBackgroundQueue.'

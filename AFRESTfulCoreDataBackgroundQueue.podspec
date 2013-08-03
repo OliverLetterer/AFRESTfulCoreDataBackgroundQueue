@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name          = 'AFRESTfulCoreDataBackgroundQueue'
-  spec.version       = '1.0.2'
+  spec.version       = '1.0.3'
   spec.platform      = :ios, '5.0'
   spec.license       = 'MIT'
   spec.source        = { :git => 'https://github.com/OliverLetterer/AFRESTfulCoreDataBackgroundQueue.git', :tag => spec.version.to_s }
@@ -11,7 +11,7 @@ Pod::Spec.new do |spec|
   spec.summary       = 'AFNetworking based AFHTTPClient conforming to SLRESTfulCoreDataBackgroundQueue.'
   spec.author        = { 'Oliver Letterer' => 'oliver.letterer@gmail.com' }
 
-  spec.dependency 'AFNetworking', '>= 1.2.1'
+  spec.dependency 'AFNetworking', '~> 1.3.1'
   spec.dependency 'SLRESTfulCoreData', '>= 1.0.0'
 
   spec.prefix_header_contents = <<-EOS

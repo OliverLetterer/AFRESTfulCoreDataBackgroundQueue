@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name          = 'AFRESTfulCoreDataBackgroundQueue'
-  spec.version       = '1.0.4'
+  spec.version       = '1.0.5'
   spec.platform      = :ios, '6.0'
   spec.license       = 'MIT'
   spec.source        = { :git => 'https://github.com/OliverLetterer/AFRESTfulCoreDataBackgroundQueue.git', :tag => spec.version.to_s }

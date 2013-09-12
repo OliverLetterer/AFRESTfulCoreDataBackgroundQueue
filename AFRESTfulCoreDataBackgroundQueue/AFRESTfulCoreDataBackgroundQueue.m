@@ -115,7 +115,7 @@
 {
     JSONObject = JSONObject ?: @{};
     
-    NSMutableURLRequest *request = [self requestWithMethod:@"PATCH" path:URL.absoluteString parameters:nil];
+    NSMutableURLRequest *request = [self requestWithMethod:@"POST" path:URL.absoluteString parameters:nil];
     
     NSError *error = nil;
     NSData *JSONData = [NSData data];

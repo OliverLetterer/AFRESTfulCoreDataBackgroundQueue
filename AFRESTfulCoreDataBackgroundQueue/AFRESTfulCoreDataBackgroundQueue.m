@@ -40,6 +40,7 @@
         
         [AFJSONRequestOperation addAcceptableContentTypes:[NSSet setWithObject:@"application/json"]];
         [self setDefaultHeader:@"Accept" value:@"application/json"];
+        [self setDefaultHeader:@"Content-Type" value:@"application/json"];
     }
     return self;
 }
